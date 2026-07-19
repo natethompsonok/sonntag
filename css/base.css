@@ -46,7 +46,7 @@ body::after {
 }
 
 .demo-2 {
-	background-image: url(../img/noise.png), url(../img/bg.jpg);
+	background-image: url(../img/noise.png);
 	background-size: 100px, cover;
 	background-position: 50% 50%;
 	--color-text: #fff;

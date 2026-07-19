@@ -46,6 +46,7 @@ body::after {
 }
 
 .demo-2 {
+	background-image: url(../img/noise.png), url(../img/bg.jpg);
 	--color-text: #fff;
   --color-bg: #252a33;
   --color-link: #717781;

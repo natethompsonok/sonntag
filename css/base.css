@@ -155,12 +155,11 @@ a:hover {
         color: #fff;
       }
 
-      .modal-body {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        overflow: hidden;
-      }
+  .modal-body {
+  position: relative;
+  height: 120px; /* Force the popup box to exactly match the small height of a Mixcloud strip player */
+  overflow: hidden;
+}
 
       .modal-body iframe {
         position: absolute;

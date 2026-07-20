@@ -171,13 +171,7 @@ a:hover {
         border: 0;
       }
 
-      /* Make row links look uniform without breaking typography layouts */
-      .list__item-link {
-        display: contents; 
-        text-decoration: none;
-        color: inherit;
-        cursor: pointer;
-      }
+
 
 
 

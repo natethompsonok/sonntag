@@ -75,24 +75,6 @@
               <span class="list__item-col hover-effect hover-effect--cursor-square">2379-04-10</span>
               <span class="list__item-col hover-effect hover-effect--cursor-square">4</span>
           </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--cursor-square">Mount Zenith</span>
-              <span class="list__item-col hover-effect hover-effect--cursor-square">Planet Lumina</span>
-              <span class="list__item-col hover-effect hover-effect--cursor-square">2392-09-21</span>
-              <span class="list__item-col hover-effect hover-effect--cursor-square">6</span>
-          </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--cursor-square">Inferno Crest</span>
-              <span class="list__item-col hover-effect hover-effect--cursor-square">Moon Rhea</span>
-              <span class="list__item-col hover-effect hover-effect--cursor-square">2410-03-08</span>
-              <span class="list__item-col hover-effect hover-effect--cursor-square">5</span>
-          </li>
-          <li class="list__item">
-              <span class="list__item-col hover-effect hover-effect--cursor-square">Jacob's Hill</span>
-              <span class="list__item-col hover-effect hover-effect--cursor-square">Exoplanet HU5</span>
-              <span class="list__item-col hover-effect hover-effect--cursor-square">2205-12-09</span>
-              <span class="list__item-col hover-effect hover-effect--cursor-square">7</span>
-          </li>
         </ul>
         <h2 class="content__title spacer">Event Codes</h2>
         <ul class="list list--alt">
@@ -133,5 +115,44 @@
 
     <!-- Scripts for the effect -->
     <script type="module" src="js/effect-1/index.js"></script>
+
+
+<!-- NEW: Pure JavaScript for Triggering the Modal -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('modalIframe');
+        const closeBtn = document.getElementById('closeModal');
+        const triggerLinks = document.querySelectorAll('.js-open-modal');
+
+        // Open modal and load respective source URL dynamically
+        triggerLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetUrl = link.getAttribute('data-video-url');
+            if (targetUrl) {
+              iframe.src = targetUrl;
+              modal.showModal(); // Standard JavaScript call for dialog overlay
+            }
+          });
+        });
+
+        // Close modal setup and source clearing (stops audio playback instantly)
+        const shutModal = () => {
+          modal.close();
+          iframe.src = '';
+        };
+
+        closeBtn.addEventListener('click', shutModal);
+
+        // Closes modal automatically if clicking anywhere outside the active box window frame
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            shutModal();
+          }
+        });
+      });
+    </script>
+    
   </body>
 </html>

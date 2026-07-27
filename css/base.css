@@ -56,6 +56,9 @@ body::after {
   --color-list-item: #c7c0b3;
   --color-title: #5b6b85;
   --color-number: #fff;
+	--color-bg-effect: rgb(229 222 204 / 10%);
+	--blendmode-effect: none;
+	--bg-blur: 5px;
 }
 
 .demo-3 {

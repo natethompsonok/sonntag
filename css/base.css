@@ -58,7 +58,7 @@ body::after {
   --color-number: #fff;
 	--color-bg-effect: rgb(229 222 204 / 10%);
 	--blendmode-effect: none;
-	--bg-blur: 5px;
+	
 }
 
 .demo-3 {
